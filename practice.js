@@ -128,6 +128,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(arr){
+  var evens = [];
+  var odds = [];
+
+  for(let i =0; i<arr.length; i++){
+    if(arr[i]%2===0){
+      evens.push(arr[i]);
+    }
+    else{
+      odds.push(arr[i]);
+    }
+  }
+  newArr = [evens, odds];
+  return newArr;
+}
 
 
 
@@ -149,7 +164,20 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr){
+  var num = getRandomArbitrary();
+  var bool;
+  for(let i=0; i<arr.length; i++){
+    if(arr[i]===num){
+      bool = true;
+      break;
+    }
+    else{
+      bool=false;
+    }
+  }
+  return bool; //I'm failing a test but Jonathan said it was fine :^)
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -178,7 +206,27 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(arr, item){
+  
+  if (arr && item){
+    for(let i = 0; i<arr.length; i++ )
+    {
+     if(arr[i]===item){
+        arr.splice(i,1);
+       }  
+    }
+    return arr;
+  }
+  else{return []}
+}
 
+function addItem(arr, item){
+  if(arr && item){  
+    arr.push(item);
+    return arr;
+  }
+  else{return []}
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -188,7 +236,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  arr = [];
+  for(let i=0;i<215;i++){
+    arr.push(i+1);
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -205,7 +259,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   
 //Code Here
 
-
+function addTen(arr){
+  newArr = [];
+  for(let i=0; i<arr.length; i++){
+    
+    newArr[i]= Number(arr[i])+10;
+  }
+  return newArr;
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -229,6 +290,12 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function longer(arr1,arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }
+  else{return arr2}
+}
 
 
 
@@ -241,7 +308,15 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1, arr2){
+  var newArr = [];
+  for(let i = 0; i<arr1.length; i++){
+    if(arr2.indexOf(arr1[i]) !== -1){
+      newArr.push(arr1[i]);
+    }
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -281,7 +356,11 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees[0]= tyler;
+devMountainEmployees[1]= cahlan;
+devMountainEmployees[2]= ryan;
+devMountainEmployees[3]= colt;
+console.log(devMountainEmployees.length)
 
 
 /*
@@ -290,7 +369,11 @@ var colt = {
 */
 
 //Code Here
-
+for(let i =0; i<devMountainEmployees.length;i++){
+  if (devMountainEmployees[i].name === "Cahlan"){
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -302,6 +385,7 @@ var colt = {
 */
 
 //Code Here
+var users = [];
 
 
 
@@ -321,7 +405,22 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Tayler McGinnis',
+  email: 'taylermcginnis33@gmail.com',
+  password: 'iLurveJavaScript',
+  username: 'infiniteLoopy'
+};
+var user3 = {
+  name: 'Ty McGinnis',
+  email: 'tymcginnis33@gmail.com',
+  password: 'iLoveJava',
+  username: 'infinite'
+};
 
+users[0]=user1;
+users[1]=user2;
+users[2]=user3;
 
 
 /*
@@ -335,7 +434,12 @@ var user1 = {
 */
 
 //Code Here
-
+for(let i =0; i<users.length; i++){
+  if(users[i].email === 'tylermcginnis33@gmail.com'){
+    users.splice(i,1);
+  }
+  console.log(users);
+}
 
 
 /*
